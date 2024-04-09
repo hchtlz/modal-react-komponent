@@ -1,12 +1,14 @@
 {
   "name": "modal-react-komponent",
-  "version": "0.0.1",
+  "version": "1.0.3",
+  "author": "Hugo Chantelauze",
   "description": "A simple modal component for React",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "homepage": "https://github.com/hchtlz/modal-react-komponent",
   "repository": {
+    "type": "git",
     "url": "https://github.com/hchtlz/modal-react-komponent"
   },
   "scripts": {
@@ -17,9 +19,10 @@
     "modal",
     "component"
   ],
-  "author": "Hugo Chantelauze",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^18.2.75",
+    "react": "^18.0.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.4"
   }

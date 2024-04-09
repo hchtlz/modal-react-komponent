@@ -1,15 +1,56 @@
 import { ModalProps } from "./types";
+import './modal.css';
+import { useEffect, useState } from 'react';
 
-export function Modal({ message }: ModalProps) {
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>${message}</p>
+export default function Modal({ message, title }: ModalProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      const overlay = document.createElement('div');
+      overlay.classList.add('modal-react-komponent-overlay');
+      document.body.appendChild(overlay);
+
+      const modal = document.createElement('div');
+      modal.classList.add('modal-react-komponent');
+      modal.innerHTML = `
+        <div class="modal-react-komponent-content">
+          <h2 class="modal-react-komponent-title">${title}</h2>
+          <p class="modal-react-komponent-message">${message}</p>
         </div>
-    `;
-    document.body.appendChild(modal);
-    const close = modal.querySelector('.close');
-    close?.addEventListener('click', () => modal.remove());
+        <button class="modal-react-komponent-close-btn">Fermer</button>
+      `;
+      document.body.appendChild(modal);
+
+      const close = modal.querySelector('.modal-react-komponent-close-btn');
+      
+      const closeModalHandler = () => {
+        modal.remove();
+        overlay.remove();
+        closeModal();
+      };
+      close?.addEventListener('click', closeModalHandler);
+
+      overlay.addEventListener('click', () => {
+        modal.remove();
+        overlay.remove();
+        closeModal();
+      });
+
+      return () => {
+        modal.remove();
+        overlay.remove();
+      };
+    }
+  }, [isModalOpen, message, title]);
+
+  return { openModal };
 }
