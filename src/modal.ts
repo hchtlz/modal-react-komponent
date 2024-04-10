@@ -1,6 +1,6 @@
 import { ModalProps } from "./types";
 
-export const Modal = ({ message, title }: ModalProps) => {
+export const Modal = ({ message, title, buttonText }: ModalProps) => {
   const modalStyles = `
     :root {
       --modal-react-komponent-bg-color: #fefefe;
@@ -29,6 +29,7 @@ export const Modal = ({ message, title }: ModalProps) => {
       display: flex;
       flex-direction: column;
       font-family: "Montserrat", sans-serif;
+      gap: 30px;
       justify-content: space-between;
       left: 50%;
       min-height: 150px;
@@ -76,21 +77,16 @@ export const Modal = ({ message, title }: ModalProps) => {
   `;
 
   const openModal = () => {
-    // Créer une balise style
     const styleElement = document.createElement('style');
 
-    // Ajouter le CSS au contenu de la balise style
     styleElement.textContent = modalStyles;
 
-    // Ajouter la balise style au head du document
     document.head.appendChild(styleElement);
 
-    // Création de l'overlay
     const overlay = document.createElement('div');
     overlay.classList.add('modal-react-komponent-overlay');
     document.body.appendChild(overlay);
 
-    // Création du modal
     const modal = document.createElement('div');
     modal.classList.add('modal-react-komponent');
     modal.innerHTML = `
@@ -98,21 +94,18 @@ export const Modal = ({ message, title }: ModalProps) => {
         <h2 class="modal-react-komponent-title">${title}</h2>
         <p class="modal-react-komponent-message">${message}</p>
       </div>
-      <button class="modal-react-komponent-close-btn">Fermer</button>
+      <button class="modal-react-komponent-close-btn">${buttonText}</button>
     `;
     document.body.appendChild(modal);
 
-    // Fonction pour fermer le modal
     const closeModalHandler = () => {
       modal.remove();
       overlay.remove();
     };
 
-    // Ajout d'un écouteur d'événement pour le bouton de fermeture
     const close = modal.querySelector('.modal-react-komponent-close-btn');
     close?.addEventListener('click', closeModalHandler);
 
-    // Ajout d'un écouteur d'événement pour fermer le modal lors du clic sur l'overlay
     overlay.addEventListener('click', () => {
       modal.remove();
       overlay.remove();
