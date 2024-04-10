@@ -1,6 +1,6 @@
 {
   "name": "modal-react-komponent",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Hugo Chantelauze",
   "description": "A simple modal component for React",
   "main": "./dist/index.js",
@@ -21,10 +21,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.2.75",
-    "@types/react-dom": "^18.2.24",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.4"
   }
