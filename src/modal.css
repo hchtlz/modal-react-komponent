@@ -1,10 +1,10 @@
 :root {
-  --modal-react-komponent-text-button-color: #5B5BD6;
+  --modal-react-komponent-bg-color: #fefefe;
   --modal-react-komponent-close-btn-bg-color: #E1E9FF;
   --modal-react-komponent-close-btn-border-color: #B8BAF8;
   --modal-react-komponent-close-btn-hover-bg-color: #C1D0FF;
-  --modal-react-komponent-bg-color: #fefefe;
   --modal-react-komponent-shadow-color: rgba(0, 0, 0, 0.2);
+  --modal-react-komponent-text-button-color: #5B5BD6;
 }
 
 .modal-react-komponent-overlay {
