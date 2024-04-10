@@ -39,17 +39,22 @@ export default function MyApp() {
 ```
 ## Custom
 
-#### You can custom the modal using 3 params :
+#### You can custom the modal using 3 parameters
 
 | Parameter | Type     |
 | :-------- | :------- |
 | `title` | `string` |
+
 | `message` | `string` |
 | `buttonText` | `string` |
 
 ## Screenshot
 
-<iframe src="./assets/kapture.gif" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+This is a simple preview of the modal
+
+<!--![giphy](https://github.com/hchtlz/modal-react-komponent/assets/93914147/5abd62a3-159f-449e-8677-4c494fbe8626)-->
+
+![giphy](https://github.com/hchtlz/modal-react-komponent/assets/93914147/704c54fd-03bf-4e69-a88f-fa5e256d824f)
 
 ## Authors
 
