@@ -1,6 +1,6 @@
 {
   "name": "modal-react-komponent",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Hugo Chantelauze",
   "description": "A simple modal component for React",
   "main": "./dist/index.js",
