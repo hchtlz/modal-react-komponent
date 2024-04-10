@@ -52,7 +52,7 @@
   border: 1px solid var(--modal-react-komponent-close-btn-border-color);
   color: var(--modal-react-komponent-text-button-color);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   margin-left: auto;
   margin-top: 20px;
   padding: 8px 16px;
@@ -62,4 +62,10 @@
 
 .modal-react-komponent-close-btn:hover {
   background-color: var(--modal-react-komponent-close-btn-hover-bg-color);
+}
+
+@media (max-width: 500px) {
+  .modal-react-komponent {
+    min-width: 250px;
+  }
 }

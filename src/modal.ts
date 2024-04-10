@@ -1,9 +1,9 @@
+import * as React from "react";
 import { ModalProps } from "./types";
 import './modal.css';
-import { useEffect, useState } from 'react';
 
 export default function Modal({ message, title }: ModalProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -13,7 +13,7 @@ export default function Modal({ message, title }: ModalProps) {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isModalOpen) {
       const overlay = document.createElement('div');
       overlay.classList.add('modal-react-komponent-overlay');
