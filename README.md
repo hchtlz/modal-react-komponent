@@ -44,7 +44,6 @@ export default function MyApp() {
 | Parameter | Type     |
 | :-------- | :------- |
 | `title` | `string` |
-
 | `message` | `string` |
 | `buttonText` | `string` |
 
