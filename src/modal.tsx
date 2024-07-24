@@ -7,6 +7,7 @@ export const Modal: React.FC<ModalProps> = ({
   buttonText,
   isOpen,
   toggleOpen,
+  callbackOnClosed,
 }: ModalProps): ReactElement => {
   const modalStyles = `
     :root {
@@ -99,7 +100,10 @@ export const Modal: React.FC<ModalProps> = ({
             </div>
             <button
               className="modal-react-komponent-close-btn"
-              onClick={() => toggleOpen()}
+              onClick={() => {
+                toggleOpen();
+                callbackOnClosed && callbackOnClosed();
+              }}
             >
               {buttonText}
             </button>

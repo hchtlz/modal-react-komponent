@@ -4,4 +4,5 @@ export type ModalProps = {
   buttonText: string;
   isOpen: boolean;
   toggleOpen: () => void;
+  callbackOnClosed?: () => void;
 };
