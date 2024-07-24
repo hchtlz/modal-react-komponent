@@ -1,6 +1,13 @@
 import { ModalProps } from "./types";
+import React, { ReactElement } from "react";
 
-export const Modal = ({ message, title, buttonText }: ModalProps) => {
+export const Modal: React.FC<ModalProps> = ({
+  message,
+  title,
+  buttonText,
+  isOpen,
+  toggleOpen,
+}: ModalProps): ReactElement => {
   const modalStyles = `
     :root {
       --modal-react-komponent-bg-color: #fefefe;
@@ -76,41 +83,29 @@ export const Modal = ({ message, title, buttonText }: ModalProps) => {
     }
   `;
 
-  const openModal = () => {
-    const styleElement = document.createElement('style');
-
-    styleElement.textContent = modalStyles;
-
-    document.head.appendChild(styleElement);
-
-    const overlay = document.createElement('div');
-    overlay.classList.add('modal-react-komponent-overlay');
-    document.body.appendChild(overlay);
-
-    const modal = document.createElement('div');
-    modal.classList.add('modal-react-komponent');
-    modal.innerHTML = `
-      <div class="modal-react-komponent-content">
-        <h2 class="modal-react-komponent-title">${title}</h2>
-        <p class="modal-react-komponent-message">${message}</p>
-      </div>
-      <button class="modal-react-komponent-close-btn">${buttonText}</button>
-    `;
-    document.body.appendChild(modal);
-
-    const closeModalHandler = () => {
-      modal.remove();
-      overlay.remove();
-    };
-
-    const close = modal.querySelector('.modal-react-komponent-close-btn');
-    close?.addEventListener('click', closeModalHandler);
-
-    overlay.addEventListener('click', () => {
-      modal.remove();
-      overlay.remove();
-    });
-  };
-
-  return { openModal };
+  return (
+    <>
+      {isOpen && (
+        <>
+          <style>{modalStyles}</style>
+          <div
+            className="modal-react-komponent-overlay"
+            onClick={() => toggleOpen()}
+          ></div>
+          <div className="modal-react-komponent">
+            <div className="modal-react-komponent-content">
+              <h2 className="modal-react-komponent-title">{title}</h2>
+              <p className="modal-react-komponent-message">{message}</p>
+            </div>
+            <button
+              className="modal-react-komponent-close-btn"
+              onClick={() => toggleOpen()}
+            >
+              {buttonText}
+            </button>
+          </div>
+        </>
+      )}
+    </>
+  );
 };

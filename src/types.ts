@@ -1,5 +1,7 @@
 export type ModalProps = {
-    message: string;
-    title: string;
-    buttonText: string;
+  message: string;
+  title: string;
+  buttonText: string;
+  isOpen: boolean;
+  toggleOpen: () => void;
 };
