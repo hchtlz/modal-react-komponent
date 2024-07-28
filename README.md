@@ -39,11 +39,11 @@ export default function MyApp() {
 
   return (
     <div>
-      <button onClick={toggleModal}>Ouvrir la modal</button>
+      <button onClick={toggleModal}>Open modal</button>
       <Modal
-        title="Salut à tous !"
-        message="Bonjour depuis modal-react-komponent"
-        buttonText="Fermer"
+        title="Hi folks!"
+        message="Hello from modal-react-komponent"
+        buttonText="Close modal"
         isOpen={isOpen}
         toggleOpen={toggleModal}
       />
@@ -56,13 +56,13 @@ export default function MyApp() {
 
 #### You can custom the modal using 5 parameters
 
-| Parameter    | Type       | Description                              |
-| :----------- | :--------- | ---------------------------------------- |
-| `title`      | `string`   | Le titre de la modal                     |
-| `message`    | `string`   | Le message affiché dans la modal         |
-| `buttonText` | `string`   | Le texte du bouton de fermeture          |
-| `isOpen`     | `boolean`  | Contrôle l'état d'ouverture de la modal  |
-| `toggleOpen` | `function` | Fonction pour changer l'état d'ouverture |
+| Parameter    | Type       | Description                          |
+| :----------- | :--------- | ------------------------------------ |
+| `title`      | `string`   | The title of the modal               |
+| `message`    | `string`   | The message displayed in the modal   |
+| `buttonText` | `string`   | The text of the close button         |
+| `isOpen`     | `boolean`  | Controls the open state of the modal |
+| `toggleOpen` | `function` | Function to change the open state    |
 
 ## Screenshot
 
